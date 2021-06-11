@@ -30,12 +30,12 @@ body {
 
 .calculator span {
   display: grid;
-  width: 60px;
+  width: 63px;
   height: 60px;
   color: #fff;
   background: #0c2835;
   place-items: center;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .calculator span:active {
@@ -45,8 +45,10 @@ body {
 
 .calculator span.clear {
   grid-column: span 2;
-  width: 120px;
   background: #ff3077;
+  width: calc(100% - 1px);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  height: calc(100% - 1px);
 }
 
 .calculator span.plus {
@@ -55,5 +57,5 @@ body {
 }
 
 .calculator span.equal {
- background: #03b1ff;
+  background: #03b1ff;
 }

@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Calculator UI Desing</title>
-    <link rel="icon" href="favicon.png" type="image/png"/>
-    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <form class="calculator" name="calc">
-      <input class="value" type="text" name="txt" readonly="">
-      <span class="num clear" onclick="document.calc.txt.value =''" >c</span>
+      <input class="value" type="text" name="txt" readonly="" />
+      <span class="num clear" onclick="document.calc.txt.value =''">c</span>
       <span class="num" onclick="document.calc.txt.value +='/'">/</span>
       <span class="num" onclick="document.calc.txt.value +='*'">*</span>
       <span class="num" onclick="document.calc.txt.value +='7'">7</span>
@@ -30,7 +32,11 @@
       <span class="num" onclick="document.calc.txt.value +='0'">0</span>
       <span class="num" onclick="document.calc.txt.value +='00'">00</span>
       <span class="num" onclick="document.calc.txt.value +='.'">.</span>
-      <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
+      <span
+        class="num equal"
+        onclick="document.calc.txt.value = eval(calc.txt.value)"
+        >=</span
+      >
     </form>
   </body>
 </html>
