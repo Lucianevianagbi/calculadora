@@ -1,4 +1,6 @@
-  # :book: Calculator Html CSS3 & Javascript
+  #  <img src="https://github.com/everton-dgn/everton-dgn/blob/main/gif/Hi.gif?raw=true" width="30px"> Calculator Html CSS3 & Javascript
+  
+  # :book: Pojeto para fins de estudo!
    
   ### :link: Visualização do Projeto: https://calc-mauve.vercel.app/
 
