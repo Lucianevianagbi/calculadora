@@ -1,8 +1,8 @@
    # :book: Calculator Html CSS3 & Javascript
    
-  ### Visualização do Projeto: https://calc-mauve.vercel.app/
+  ### :link: Visualização do Projeto: https://calc-mauve.vercel.app/
 
-  ### Video de referencia: https://youtu.be/BuZtAqk5LIY
+  ### :link: Video de referencia: https://youtu.be/BuZtAqk5LIY
 
    # :computer: Technologies Used:
    
