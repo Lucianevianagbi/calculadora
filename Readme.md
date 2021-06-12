@@ -1,4 +1,4 @@
-   # :book: Calculator Html CSS3 & Javascript
+  # :book: Calculator Html CSS3 & Javascript
    
   ### :link: Visualização do Projeto: https://calc-mauve.vercel.app/
 
@@ -11,8 +11,9 @@
    * JavaScript
 
    ### :camera_flash: Screenshots do Projeto
-   <br> <br>
-    ![Imagem do projeto](https://github.com/Lucianevianagbi/calculadora/blob/main/img/img1.jpg)
+   <br> 
+
+   ![Imagem do projeto](https://github.com/Lucianevianagbi/calculadora/blob/main/img/img1.jpg)
    <br>
    ![Imagem do projeto](https://github.com/Lucianevianagbi/calculadora/blob/main/img/img2.jpg)
    <br>
