@@ -1,42 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Calculator UI Desing</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator UI Desing</title>
+  <link rel="icon" href="favicon.png" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
 
-  <body>
-    <form class="calculator" name="calc">
-      <input class="value" type="text" name="txt" readonly="" />
-      <span class="num clear" onclick="document.calc.txt.value =''">c</span>
-      <span class="num" onclick="document.calc.txt.value +='/'">/</span>
-      <span class="num" onclick="document.calc.txt.value +='*'">*</span>
-      <span class="num" onclick="document.calc.txt.value +='7'">7</span>
-      <span class="num" onclick="document.calc.txt.value +='8'">8</span>
-      <span class="num" onclick="document.calc.txt.value +='9'">9</span>
-      <span class="num" onclick="document.calc.txt.value +='-'">-</span>
-      <span class="num" onclick="document.calc.txt.value +='4'">4</span>
-      <span class="num" onclick="document.calc.txt.value +='5'">5</span>
-      <span class="num" onclick="document.calc.txt.value +='6'">6</span>
-      <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
-      <span class="num" onclick="document.calc.txt.value +='3'">3</span>
-      <span class="num" onclick="document.calc.txt.value +='2'">2</span>
-      <span class="num" onclick="document.calc.txt.value +='1'">1</span>
-      <span class="num" onclick="document.calc.txt.value +='0'">0</span>
-      <span class="num" onclick="document.calc.txt.value +='00'">00</span>
-      <span class="num" onclick="document.calc.txt.value +='.'">.</span>
-      <span
-        class="num equal"
-        onclick="document.calc.txt.value = eval(calc.txt.value)"
-        >=</span
-      >
-    </form>
-  </body>
+<body>
+<div class="calculator">
+  <div class="wrapperDisplay">
+    <input class="value" id="res" type="text" readonly/>
+    <div id="value"></div>
+    <div id="result"></div>
+  </div>
+  <section class="wrapperKeys">
+    <button class="num clear" onclick="reset(value)">
+      <span></span><span></span><span></span><span></span>c
+    </button>
+    <button class="num" value="/" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>/
+    </button>
+    <button class="num" value="*" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>*
+    </button>
+    <button class="num" value="7" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>7
+    </button>
+    <button class="num" value="8" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>8
+    </button>
+    <button class="num" value="9" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>9
+    </button>
+    <button class="num" value="-" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>-
+    </button>
+    <button class="num" value="4" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>4
+    </button>
+    <button class="num" value="5" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>5
+    </button>
+    <button class="num" value="6" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>6
+    </button>
+    <button class="num plus" value="+" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>+
+    </button>
+    <button class="num" value="3" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>3
+    </button>
+    <button class="num" value="2" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>2
+    </button>
+    <button class="num" value="1" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>1
+    </button>
+    <button class="num" value="0" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>0
+    </button>
+    <button class="num" value="00" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>00
+    </button>
+    <button class="num" value="." onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>.
+    </button>
+    <button class="num equal" value="=" onclick="calc()">
+      <span></span><span></span><span></span><span></span>=
+    </button>
+  </section>
+</div>
+
+<script>
+  const $ = document.getElementById.bind(document)
+
+  function btnKey(num) {
+    let save = $('res').value
+
+    const operators = ['+', '-', '*', '/']
+
+    if (save === 'ERROR!') return reset()
+
+    if (operators.includes(save[save.length - 1]) && operators.includes(num)) {
+      $('value').innerText = save.slice(0, save.length - 1) + num
+      return $('res').value = save.slice(0, save.length - 1) + num
+    }
+
+    $('res').value = save + num
+    $('value').innerText = save + num
+
+    calc()
+  }
+
+  function calc() {
+    let result = $('res').value
+
+    if (result === 'ERROR!' || ['+', '-', '*', '/'].includes(result)) {
+      return reset()
+    }
+
+    //$('res').value = ''
+    let resDisplay = eval(result)
+
+    if (resDisplay === undefined || resDisplay === Infinity || Number.isNaN(resDisplay) || resDisplay === -Infinity) {
+      $('result').innerText = 'ERROR!'
+    } else {
+      $('result').innerText = resDisplay
+    }
+  }
+
+  function reset() {
+    $('res').value = ''
+    $('result').innerText = ''
+    $('value').innerText = ''
+  }
+</script>
+</body>
 </html>

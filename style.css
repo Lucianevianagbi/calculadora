@@ -6,56 +6,282 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #091921;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100%;
+  background: #060015;
 }
 
 .calculator {
-  position: relative;
   display: grid;
+  background: #0c002b;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35% auto;
+  border-radius: 4px;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transform: scale(0);
+  box-shadow: 0 3px 130px 5px #000;
+  animation: zoom 0.3s ease-in-out forwards;
+}
+
+.wrapperKeys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 14px;
+  padding: 10px;
+}
+
+.wrapperDisplay {
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  border-radius: 4px 4px 0 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(45deg, #130047, #3300b8);
+  animation: zoom 0.3s ease-in-out forwards 0.15s;
+}
+
+#result {
+  display: flex;
+  width: 100%;
+  font-size: 40px;
+  color: #fff;
+  height: 100px;
+  justify-content: flex-end;
+  align-items: center;
+  word-break: break-all;
+  text-align: right;
 }
 
 .calculator .value {
-  grid-column: span 4;
-  height: 100px;
+  display: none;
+}
+
+.calculator #value {
+  background: transparent;
+  word-break: break-all;
   text-align: right;
   border: none;
   outline: none;
-  padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  color: #9166ff;
+  letter-spacing: 2px;
 }
 
-.calculator span {
+
+button {
+  border: 0;
+  box-shadow: 2px 2px 9px -1px #1f0070;
+  font-size: 20px;
+  position: relative;
+  border-radius: 4px;
   display: grid;
-  width: 63px;
-  height: 60px;
-  color: #fff;
-  background: #0c2835;
   place-items: center;
-  border: 1px solid rgba(0, 0, 0, .1);
+  color: #fff;
+  background: #0c002b;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+  overflow: hidden;
+  animation: zoom 0.3s ease-in-out forwards;
 }
 
-.calculator span:active {
-  background: #74ff3b;
-  color: #111;
+button:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
 }
 
-.calculator span.clear {
+/* ============ animation layser start =============== */
+
+button span:nth-child(1) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #4600ff);
+  animation: animateX1 2s linear infinite;
+}
+
+button span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #4600ff);
+  animation: animateY1 2s linear infinite;
+  animation-delay: 1s;
+}
+
+button span:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, transparent, #4600ff);
+  animation: animateX2 2s linear infinite;
+}
+
+button span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #4600ff);
+  animation: animateY2 2s linear infinite;
+  animation-delay: 1s;
+}
+
+/* ============ animation layser the end =============== */
+
+@keyframes animateX1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateY1 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes animateX2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateY2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ======================== animation zoom =========================== */
+button:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+button:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+button:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+button:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+button:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+button:nth-child(6) {
+  animation-delay: 0.45s;
+}
+
+button:nth-child(7) {
+  animation-delay: 0.5s;
+}
+
+button:nth-child(8) {
+  animation-delay: 0.55s;
+}
+
+button:nth-child(9) {
+  animation-delay: 0.6s;
+}
+
+button:nth-child(10) {
+  animation-delay: 0.65s;
+}
+
+button:nth-child(11) {
+  animation-delay: 0.7s;
+}
+
+button:nth-child(12) {
+  animation-delay: 0.75s;
+}
+
+button:nth-child(13) {
+  animation-delay: 0.8s;
+}
+
+button:nth-child(14) {
+  animation-delay: 0.85s;
+}
+
+button:nth-child(15) {
+  animation-delay: 0.9s;
+}
+
+button:nth-child(16) {
+  animation-delay: 0.95s;
+}
+
+button:nth-child(17) {
+  animation-delay: 1s;
+}
+
+button:nth-child(18) {
+  animation-delay: 1.05s;
+}
+
+.calculator button:hover {
+  background: #1f0073;
+}
+
+.calculator button:active {
+  background: #4600ff;
+}
+
+.calculator button.clear {
   grid-column: span 2;
-  background: #ff3077;
-  width: calc(100% - 1px);
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  height: calc(100% - 1px);
 }
 
-.calculator span.plus {
+.calculator button.plus {
   grid-row: span 2;
-  height: 120px;
 }
 
-.calculator span.equal {
-  background: #03b1ff;
+@keyframes zoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .calculator {
+    width: 400px;
+    height: 600px;
+  }
 }
