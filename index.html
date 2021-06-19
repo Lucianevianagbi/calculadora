@@ -25,11 +25,11 @@
     <button class="num clear" onclick="reset(value)">
       <span></span><span></span><span></span><span></span>c
     </button>
+    <button class="num" onclick="backspace()">
+      <span></span><span></span><span></span><span></span><img src="img/backspace.svg" alt="">
+    </button>
     <button class="num" value="/" onclick="btnKey(value)">
       <span></span><span></span><span></span><span></span>/
-    </button>
-    <button class="num" value="*" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>*
     </button>
     <button class="num" value="7" onclick="btnKey(value)">
       <span></span><span></span><span></span><span></span>7
@@ -40,8 +40,8 @@
     <button class="num" value="9" onclick="btnKey(value)">
       <span></span><span></span><span></span><span></span>9
     </button>
-    <button class="num" value="-" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>-
+    <button class="num" value="*" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>*
     </button>
     <button class="num" value="4" onclick="btnKey(value)">
       <span></span><span></span><span></span><span></span>4
@@ -73,14 +73,30 @@
     <button class="num" value="." onclick="btnKey(value)">
       <span></span><span></span><span></span><span></span>.
     </button>
-    <button class="num equal" value="=" onclick="calc()">
-      <span></span><span></span><span></span><span></span>=
+    <button class="num equal" value="-" onclick="btnKey(value)">
+      <span></span><span></span><span></span><span></span>-
     </button>
   </section>
 </div>
 
 <script>
   const $ = document.getElementById.bind(document)
+
+  function backspace() {
+    let save = $('res').value
+    let value = $('value').innerText
+
+    if (save.length > 1) {
+      let sub = value.slice(0, save.length - 1)
+      $('value').innerText = sub
+      $('res').value = sub
+      calc()
+    } else if (save.length === 1) {
+      reset()
+    } else {
+      reset()
+    }
+  }
 
   function btnKey(num) {
     let save = $('res').value
@@ -107,8 +123,14 @@
       return reset()
     }
 
-    //$('res').value = ''
-    let resDisplay = eval(result)
+    let resDisplay
+
+    if (['+', '-', '*', '/'].includes(result.slice(-1))) {
+      let valueNormalize = result.slice(0, result.length - 1)
+      resDisplay = eval(valueNormalize)
+    } else {
+      resDisplay = eval(result)
+    }
 
     if (resDisplay === undefined || resDisplay === Infinity || Number.isNaN(resDisplay) || resDisplay === -Infinity) {
       $('result').innerText = 'ERROR!'
