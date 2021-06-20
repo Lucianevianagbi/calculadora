@@ -82,6 +82,8 @@
 <script>
   const $ = document.getElementById.bind(document)
 
+  const operators = ['+', '-', '*', '/']
+
   function backspace() {
     let save = $('res').value
     let value = $('value').innerText
@@ -101,11 +103,9 @@
   function btnKey(num) {
     let save = $('res').value
 
-    const operators = ['+', '-', '*', '/']
-
     if (save === 'ERROR!') return reset()
 
-    if (operators.includes(save[save.length - 1]) && operators.includes(num)) {
+    if (operators.includes(save[save.length - 1]) && operators.includes(num) && save.length !== '-') {
       $('value').innerText = save.slice(0, save.length - 1) + num
       return $('res').value = save.slice(0, save.length - 1) + num
     }
@@ -119,13 +119,13 @@
   function calc() {
     let result = $('res').value
 
-    if (result === 'ERROR!' || ['+', '-', '*', '/'].includes(result)) {
+    if (result === 'ERROR!' || operators.includes(result) && result !== '-') {
       return reset()
     }
 
     let resDisplay
 
-    if (['+', '-', '*', '/'].includes(result.slice(-1))) {
+    if (operators.includes(result.slice(-1)) && result !== '-') {
       let valueNormalize = result.slice(0, result.length - 1)
       resDisplay = eval(valueNormalize)
     } else {
