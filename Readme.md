@@ -20,6 +20,6 @@
    
    ## :woman: By:  Luciane Viana
 
-   ## :man: Melhorias e Design do projeto: Éverton toffanetto
+   ## :man: Melhorias e Design do projeto: Éverton Toffanetto
 
    ### :link: LinkedIn: https://www.linkedin.com/in/luciane-viana
