@@ -1,149 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Calculator UI Desing</title>
-  <link rel="icon" href="img/favicon.png" type="image/png"/>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com"/>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator UI Desing</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-<div class="calculator">
-  <div class="wrapperDisplay">
-    <input class="value" id="res" type="text" readonly/>
-    <div id="value"></div>
-    <div id="result"></div>
-  </div>
-  <section class="wrapperKeys">
-    <button class="num clear" onclick="reset(value)">
-      <span></span><span></span><span></span><span></span>c
-    </button>
-    <button class="num" onclick="backspace()">
-      <span></span><span></span><span></span><span></span><img src="img/backspace.svg" alt="">
-    </button>
-    <button class="num" value="/" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>/
-    </button>
-    <button class="num" value="7" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>7
-    </button>
-    <button class="num" value="8" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>8
-    </button>
-    <button class="num" value="9" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>9
-    </button>
-    <button class="num" value="*" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>*
-    </button>
-    <button class="num" value="4" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>4
-    </button>
-    <button class="num" value="5" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>5
-    </button>
-    <button class="num" value="6" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>6
-    </button>
-    <button class="num plus" value="+" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>+
-    </button>
-    <button class="num" value="3" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>3
-    </button>
-    <button class="num" value="2" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>2
-    </button>
-    <button class="num" value="1" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>1
-    </button>
-    <button class="num" value="0" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>0
-    </button>
-    <button class="num" value="00" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>00
-    </button>
-    <button class="num" value="." onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>.
-    </button>
-    <button class="num equal" value="-" onclick="btnKey(value)">
-      <span></span><span></span><span></span><span></span>-
-    </button>
-  </section>
-</div>
+  <body>
+    <div class="calculator">
+      <div class="wrapperDisplay">
+        <input class="value" id="res" type="text" readonly />
+        <div id="value"></div>
+        <div id="result"></div>
+      </div>
+      <section class="wrapperKeys">
+        <button class="num clear" onclick="reset(value)">
+          <span></span><span></span><span></span><span></span>c
+        </button>
+        <button class="num" onclick="backspace()">
+          <span></span><span></span><span></span><span></span
+          ><img src="img/backspace.svg" alt="" />
+        </button>
+        <button class="num" value="/" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>/
+        </button>
+        <button class="num" value="7" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>7
+        </button>
+        <button class="num" value="8" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>8
+        </button>
+        <button class="num" value="9" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>9
+        </button>
+        <button class="num" value="*" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>*
+        </button>
+        <button class="num" value="4" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>4
+        </button>
+        <button class="num" value="5" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>5
+        </button>
+        <button class="num" value="6" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>6
+        </button>
+        <button class="num plus" value="+" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>+
+        </button>
+        <button class="num" value="3" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>3
+        </button>
+        <button class="num" value="2" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>2
+        </button>
+        <button class="num" value="1" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>1
+        </button>
+        <button class="num" value="0" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>0
+        </button>
+        <button class="num" onclick="Equal()">
+          <span></span><span></span><span></span><span></span>=
+        </button>
+        <button class="num" value="." onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>.
+        </button>
+        <button class="num equal" value="-" onclick="btnKey(value)">
+          <span></span><span></span><span></span><span></span>-
+        </button>
+      </section>
+    </div>
 
-<script>
-  const $ = document.getElementById.bind(document)
+    <script>
+      const $ = document.getElementById.bind(document);
 
-  const operators = ['+', '-', '*', '/']
+      let memory;
 
-  function backspace() {
-    let save = $('res').value
-    let value = $('value').innerText
+      const operators = ["+", "-", "*", "/"];
 
-    if (save.length > 1) {
-      let sub = value.slice(0, save.length - 1)
-      $('value').innerText = sub
-      $('res').value = sub
-      calc()
-    } else if (save.length === 1) {
-      reset()
-    } else {
-      reset()
-    }
-  }
+      function Equal() {
+        calc()
+        $("res").value = memory;
+        $("result").innerText = memory;
+        $("value").innerText = memory;
+      }
 
-  function btnKey(num) {
-    let save = $('res').value
+      function backspace() {
+        let save = $("res").value;
+        let value = $("value").innerText;
 
-    if (save === 'ERROR!') return reset()
+        if (save.length > 1) {
+          let sub = value.slice(0, save.length - 1);
+          $("value").innerText = sub;
+          $("res").value = sub;
+          calc();
+        } else if (save.length === 1) {
+          reset();
+        } else {
+          reset();
+        }
+      }
 
-    if (operators.includes(save[save.length - 1]) && operators.includes(num) && save.length !== '-') {
-      $('value').innerText = save.slice(0, save.length - 1) + num
-      return $('res').value = save.slice(0, save.length - 1) + num
-    }
+      function btnKey(num) {
+        let save = $("res").value;
 
-    $('res').value = save + num
-    $('value').innerText = save + num
+        if (save === "ERROR!") return reset();
 
-    calc()
-  }
+        if (
+          operators.includes(save[save.length - 1]) &&
+          operators.includes(num) &&
+          save.length !== "-"
+        ) {
+          $("value").innerText = save.slice(0, save.length - 1) + num;
+          return ($("res").value = save.slice(0, save.length - 1) + num);
+        }
 
-  function calc() {
-    let result = $('res').value
+        $("res").value = save + num;
+        $("value").innerText = save + num;
 
-    if (result === 'ERROR!' || operators.includes(result) && result !== '-') {
-      return reset()
-    }
+        calc();
+      }
 
-    let resDisplay
+      function calc() {
+        let result = $("res").value;
 
-    if (operators.includes(result.slice(-1)) && result !== '-') {
-      let valueNormalize = result.slice(0, result.length - 1)
-      resDisplay = eval(valueNormalize)
-    } else {
-      resDisplay = eval(result)
-    }
+        if (
+          result === "ERROR!" ||
+          (operators.includes(result) && result !== "-")
+        ) {
+          return reset();
+        }
 
-    if (resDisplay === undefined || resDisplay === Infinity || Number.isNaN(resDisplay) || resDisplay === -Infinity) {
-      $('result').innerText = 'ERROR!'
-    } else {
-      $('result').innerText = resDisplay
-    }
-  }
+        let resDisplay;
 
-  function reset() {
-    $('res').value = ''
-    $('result').innerText = ''
-    $('value').innerText = ''
-  }
-</script>
-</body>
+        if (operators.includes(result.slice(-1)) && result !== "-") {
+          let valueNormalize = result.slice(0, result.length - 1);
+          resDisplay = eval(valueNormalize);
+        } else {
+          resDisplay = eval(result);
+        }
+
+        if (
+          resDisplay === undefined ||
+          resDisplay === Infinity ||
+          Number.isNaN(resDisplay) ||
+          resDisplay === -Infinity
+        ) {
+          $("result").innerText = "ERROR!";
+        } else {
+          $("result").innerText = resDisplay;
+          memory = resDisplay
+        }
+      }
+
+      function reset() {
+        $("res").value = "";
+        $("result").innerText = "";
+        $("value").innerText = "";
+      }
+    </script>
+  </body>
 </html>
